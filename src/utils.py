@@ -4,7 +4,7 @@ import sys
 import numpy as np
 import pandas as pd
 import dill
-from sklearn.metric import r2_score
+from sklearn.metrics import r2_score
 from src.exception import CustomException
 
 def save_object(file_path,obj):
@@ -35,7 +35,7 @@ def evaluate_models(X_train,Y_train,X_test,Y_test,models):
 
             test_model_score = r2_score(Y_test,y_test_pred)
 
-            report[list(models.keys())[i]] test_model_score
+            report[list(models.keys())[i]] = test_model_score
 
             return report
 
